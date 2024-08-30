@@ -1,0 +1,65 @@
+﻿@page
+@model _2024AMS.Pages.Assets.MaintainAssetsModel
+@{
+}
+
+<form method="post">
+
+    <label>Filter Assets By:</label>
+    <input asp-for="Filter" target="popup" 
+    title="Filter by anything except category and manufacturer.">
+    <select asp-for="AssetCategoryID" asp-items="@Model.AssetCategorySelectList">
+        <option value="0">--Select a category--</option>
+    </select>
+    @* <select asp-for="OperatingSystemID" asp-items="@Model.OperatingSystemSelectList">
+        <option value="0">--Select an OS--</option>
+    </select> *@
+    <select asp-for="ManufacturerID" asp-items="@Model.ManufacturerSelectList">
+        <option value="0">--Select a manufacturer--</option>
+    </select>
+    <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <a class="btn" asp-page="MaintainAssets">Clear Filter</a>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><a asp-page="AddAsset" class="greenbtn">Add</a></td>
+            <th><label>Asset Category</label></th>
+            <th><label>Manufacturer</label></th>           
+            <th><label>Asset</label></th>
+            <th><label>Model</label></th>       
+            <th><label>Serial Number</label></th>
+            <th><label>Barcode</label></th>
+            <th><label>Purchase Date</label></th>
+            <th><label>Warranty Date</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JoinResultIList)
+        {
+            <tr>
+                <td><a class="btn" asp-page="ModifyAsset" asp-route-intAssetID="@item.AssetID">Modify</a>
+                    @switch (HttpContext.Session.GetString("Status"))
+                    {
+                        case "A":
+                            <a class="redbtn" asp-page="DeleteAsset" asp-route-intAssetID="@item.AssetID" onclick="return confirm('Are you sure you want to delete this item? Click OK to delete it. Click Cancel to keep it.')">Delete</a>
+                            break;
+                        case "T":
+                            // Don't display the delete button.
+                            break;
+                    }
+                </td>
+                <td><label>@item.AssetCategory1</label></td>
+                <td><label>@item.Manufacturer1</label></td>             
+                <td><label>@item.Asset1</label></td>
+                <td><label>@item.Model</label></td>
+                <td><label>@item.SerialNumber</label></td>        
+                <td><label>@item.Barcode</label></td>
+                <td><label>@item.PurchaseDate.Value.ToShortDateString()</label></td>
+                <td><label>@item.WarrantyDate.Value.ToShortDateString()</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

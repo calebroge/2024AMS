@@ -1,0 +1,25 @@
+﻿@page
+@model _2024AMS.Pages.OperatingSystems.MaintainOperatingSystemsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><a asp-page="AddOperatingSystem" class="greenbtn">Add</a></td>
+            <th><label>Operating System</label></th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JoinResultIList)
+        {
+            <tr>
+                <td>
+                    <a class="btn" asp-page="ModifyOperatingSystem" asp-route-intOperatingSystemID="@item.OperatingSystemID">Modify</a>
+                    <a class="redbtn" asp-page="DeleteOperatingSystem" asp-route-intOperatingSystemID="@item.OperatingSystemID" onclick="return confirm('Are you sure you want to delete this item? Click OK to delete it. Click Cancel to keep it.')">Delete</a>
+                </td>
+                <td><label>@item.OperatingSystem</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

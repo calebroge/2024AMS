@@ -1,0 +1,68 @@
+﻿@page
+@model _2024AMS.Pages.Users.ModifyUserModel
+@{
+}
+
+<form method="post">
+
+    <input asp-for="User.UserID" type="hidden" />
+
+    <table>
+        <tr>
+            <td><label asp-for="User.FirstName" class="label"></label></td>
+            <td><input asp-for="User.FirstName" /></td>
+            <td><span asp-validation-for="User.FirstName" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="User.LastName" class="label"></label></td>
+            <td><input asp-for="User.LastName" /></td>
+            <td><span asp-validation-for="User.LastName" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="User.MiddleInitial" class="label"></label></td>
+            <td><input asp-for="User.MiddleInitial" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="User.EmailAddress" class="label"></label></td>
+            <td><input asp-for="User.EmailAddress" /></td>
+            <td><span asp-validation-for="User.EmailAddress" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="User.Status" class="label"></label></td>
+            <td>
+                <select asp-for="User.Status">
+                    <option value="">----- Select a Status -----</option>
+                    <option value="A">Administrator</option>
+                    <option value="F">FacStaff</option>
+                    <option value="T">Technician</option>
+                </select>
+            </td>
+            <td><span asp-validation-for="User.Status" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Modify" type="submit" value="Modify" />
+                <a class="redbtn" asp-page="CancelUser">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

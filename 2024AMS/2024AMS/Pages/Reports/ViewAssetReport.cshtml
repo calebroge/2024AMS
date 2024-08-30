@@ -1,0 +1,56 @@
+﻿@page
+@model _2024AMS.Pages.Reports.ViewAssetReportModel
+@{
+}
+
+<form method="post">
+
+    <label>Filter Assets By:</label>
+    <input asp-for="Filter" target="popup"
+           title="Filter by anything except category and manufacturer." />
+    <select asp-for="AssetCategoryID" asp-items="@Model.AssetCategorySelectList">
+        <option value="0">--Select a category--</option>
+    </select>
+    @* <select asp-for="OperatingSystemID" asp-items="@Model.OperatingSystemSelectList">
+    <option value="0">--Select an OS--</option>
+    </select> *@
+    <select asp-for="ManufacturerID" asp-items="@Model.ManufacturerSelectList">
+        <option value="0">--Select a manufacturer--</option>
+    </select>
+    <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <a class="btn" asp-page="ViewAssetReport">Clear Filter</a>
+    <input asp-page-handler="Send" type="submit" value="Send Email" />
+
+</form>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th><label>Asset Category</label></th>
+            <th><label>Manufacturer</label></th>
+            <th><label>Asset</label></th>
+            <th><label>Model</label></th>
+            <th><label>Serial Number</label></th>     
+            <th><label>Barcode</label></th>
+            <th><label>Purchase Date</label></th>
+            <th><label>Warranty Date</label></th>
+            <th><label>Checked Out To</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JoinResultIList)
+        {
+            <tr>
+                <td><label>@item.AssetCategory1</label></td>
+                <td><label>@item.Manufacturer1</label></td>
+                <td><label>@item.Asset1</label></td>
+                <td><label>@item.Model</label></td>
+                <td><label>@item.SerialNumber</label></td>
+                <td><label>@item.Barcode</label></td>
+                <td><label>@item.PurchaseDate.Value.ToShortDateString()</label></td>
+                <td><label>@item.WarrantyDate.Value.ToShortDateString()</label></td>
+                <td><label>@item.LastName, @item.FirstName</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

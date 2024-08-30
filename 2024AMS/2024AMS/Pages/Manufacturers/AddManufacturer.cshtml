@@ -1,0 +1,41 @@
+﻿@page
+@model _2024AMS.Pages.Manufacturers.AddManufacturerModel
+@{
+}
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="Manufacturer.Manufacturer1" class="label"></label></td>
+            <td><input asp-for="Manufacturer.Manufacturer1" /></td>
+            <td><span asp-validation-for="Manufacturer.Manufacturer1" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Add" type="submit" value="Add" />
+                <a class="redbtn" asp-page="CancelManufacturer">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

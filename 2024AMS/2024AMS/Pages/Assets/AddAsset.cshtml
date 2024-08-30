@@ -1,0 +1,95 @@
+﻿@page
+@model _2024AMS.Pages.Assets.AddAssetModel
+@{
+}
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="Asset.AssetCategoryID" class="label"></label></td>
+            <td>
+                <select asp-for="Asset.AssetCategoryID" asp-items="@Model.AssetCategorySelectList">
+                    <option value=""></option>
+                </select>
+            </td>
+            <td><span asp-validation-for="Asset.AssetCategoryID" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.ManufacturerID" class="label"></label></td>
+            <td>
+                <select asp-for="Asset.ManufacturerID" asp-items="@Model.ManufacturerSelectList">
+                    <option value=""></option>
+                </select>
+            </td>
+            <td><span asp-validation-for="Asset.ManufacturerID" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.OperatingSystemID" class="label"></label></td>
+            <td>
+                <select asp-for="Asset.OperatingSystemID" asp-items="@Model.OperatingSystemSelectList">
+                    <option value=""></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.Asset1" class="label"></label></td>
+            <td><input asp-for="Asset.Asset1" /></td>
+            <td><span asp-validation-for="Asset.Asset1" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.Model" class="label"></label></td>
+            <td><input asp-for="Asset.Model" /></td>
+            <td><span asp-validation-for="Asset.Model" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.ServiceTag" class="label"></label></td>
+            <td><input asp-for="Asset.ServiceTag" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.SerialNumber" class="label"></label></td>
+            <td><input asp-for="Asset.SerialNumber" /></td>
+            <td><span asp-validation-for="Asset.SerialNumber" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.MACAddress" class="label"></label></td>
+            <td>
+                <input asp-for="Asset.MACAddress" target="popup"
+                title="If the asset has a MAC Address please fill it in the form: xx:xx:xx:xx:xx:xx. If it doesn't, put N/A.">
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.Barcode" class="label"></label></td>
+            <td><input asp-for="Asset.Barcode" /></td>
+            <td><span asp-validation-for="Asset.Barcode" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.PurchaseDate" class="label"></label></td>
+            <td><input asp-for="Asset.PurchaseDate" type="date" value="Asset.PurchaseDate.ToString(" dd-mm-yyyy")" /></td>
+            <td><span asp-validation-for="Asset.PurchaseDate" class="text-danger"></span></td>
+
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.WarrantyDate" class="label" ></label></td>
+            <td><input asp-for="Asset.WarrantyDate" type="date" value="Asset.WarrantyDate.ToString("dd-mm-yyyy")"/></td>
+            <td><span asp-validation-for="Asset.WarrantyDate" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Asset.Notes" class="label"></label></td>
+            <td><textarea asp-for="Asset.Notes"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Add" type="submit" value="Add" />
+                <a class="redbtn" asp-page="CancelAsset">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

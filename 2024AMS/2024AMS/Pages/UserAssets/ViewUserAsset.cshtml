@@ -1,0 +1,55 @@
+﻿@page
+@model _2024AMS.Pages.UserAssets.ViewUserAssetModel
+@{
+}
+
+<form method="post">
+
+    @* <label>Filter Assets By:</label>
+    <input asp-for="Filter" />
+    <select asp-for="AssetCategoryID" asp-items="@Model.AssetCategorySelectList">
+        <option value="0">--Select a category--</option>
+    </select>
+    @* <select asp-for="OperatingSystemID" asp-items="@Model.OperatingSystemSelectList">
+        <option value="0">--Select an OS--</option>
+    </select> *@
+   @*  <input asp-page-handler="Filter" type="submit" value="Filter" />
+    <a class="btn" asp-page="ViewUserAsset">Clear Filter</a> *@ 
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><label>Asset Category</label></th>
+            <th><label>Asset</label></th>
+            <th><label>Checked Out Date</label></th>
+            <th><label>Checked In Date</label></th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JoinResultIList)
+        {
+            <tr>
+                <td><label>@item.AssetCategory1</label></td>
+                <td><label>@item.Asset1</label></td>
+                @if (@item.CheckedOutDate != null)
+                {
+                    <td><label>@item.CheckedOutDate.Value.ToShortDateString()</label></td>
+                }
+                @if (@item.CheckedOutDate == null)
+                {
+                    <td><label></label></td>   @* Don't display the checked out date. *@
+                }
+                @if (@item.CheckedInDate != null)
+                {
+                    <td><label>@item.CheckedInDate.Value.ToShortDateString()</label></td>
+                }
+                @if (@item.CheckedInDate == null)
+                {
+                    <td><label></label></td>   @* Don't display the checked in date. *@
+                }
+            </tr>
+        }
+    </tbody>
+</table>

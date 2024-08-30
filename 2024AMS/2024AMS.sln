@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024AMS", "2024AMS\2024AMS.csproj", "{7AE005B7-9908-4C22-8B19-E5212638DE42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AE005B7-9908-4C22-8B19-E5212638DE42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE005B7-9908-4C22-8B19-E5212638DE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE005B7-9908-4C22-8B19-E5212638DE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE005B7-9908-4C22-8B19-E5212638DE42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60ADE90C-E347-4576-8EA5-5A4323C57F5D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.franklincollege.edu/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = 2024AMS\\2024AMS.csproj
+		SccProjectName1 = 2024AMS
+		SccLocalPath1 = 2024AMS
+	EndGlobalSection
+EndGlobal

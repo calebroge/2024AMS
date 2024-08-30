@@ -1,0 +1,41 @@
+﻿@page
+@model _2024AMS.Pages.AssetCategories.AddAssetCategoryModel
+@{
+}
+
+<form method="post">
+
+    <table>
+        <tr>
+            <td><label asp-for="AssetCategory.AssetCategory1" class="label"></label></td>
+            <td><input asp-for="AssetCategory.AssetCategory1" /></td>
+            <td><span asp-validation-for="AssetCategory.AssetCategory1" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Add" type="submit" value="Add" />
+                <a class="redbtn" asp-page="CancelAssetCategory">Cancel</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

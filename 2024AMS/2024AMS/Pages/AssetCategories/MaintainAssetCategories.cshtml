@@ -1,0 +1,26 @@
+﻿@page
+@model _2024AMS.Pages.AssetCategories.MaintainAssetCategoriesModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><a asp-page="AddAssetCategory" class="greenbtn">Add</a></td>
+            <th><label>Asset Category</label></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JoinResultIList)
+        {
+            <tr>
+                <td>
+                    <a class="btn" asp-page="ModifyAssetCategory" asp-route-intAssetCategoryID="@item.AssetCategoryID">Modify</a>
+                    <a class="redbtn" asp-page="DeleteAssetCategory" asp-route-intAssetCategoryID="@item.AssetCategoryID" onclick="return confirm('Are you sure you want to delete this item? Click OK to delete it. Click Cancel to keep it.')">Delete</a>
+                </td>
+                <td><label>@item.AssetCategory</label></td>
+            </tr>
+        }
+    </tbody>
+</table>

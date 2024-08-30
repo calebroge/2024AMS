@@ -1,0 +1,64 @@
+﻿@page
+@model _2024AMS.Pages.UserAssets.ModifyUserAssetModel
+@{
+}
+
+<form method="post">
+
+    <input asp-for="UserAsset.UserAssetID" type="hidden" />
+    
+    <table>
+        <tr>
+            <td><label asp-for="UserAsset.AssetID" class="label"></label></td>
+            <td>
+                <select asp-for="UserAsset.AssetID" asp-items="@Model.AssetSelectList">
+                    <option value="">--Select an asset--</option>
+                </select>
+            </td>
+            <td><span asp-validation-for="UserAsset.AssetID" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="UserAsset.UserID" class="label"></label></td>
+            <td>
+                <select asp-for="UserAsset.UserID" asp-items="@Model.UserSelectList">
+                    <option value="">--Select a user--</option>
+                </select>
+            </td>
+            <td><span asp-validation-for="UserAsset.UserID" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="UserAsset.CheckedOutDate" class="label"></label></td>
+            <td><input asp-for="UserAsset.CheckedOutDate" type="date"  /></td>
+            <td><span asp-validation-for="UserAsset.CheckedOutDate" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="UserAsset.CheckedInDate" class="label"></label></td>
+            <td><input asp-for="UserAsset.CheckedInDate" type="date" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Modify" type="submit" value="Modify" />
+                <a class="redbtn" asp-page="CancelUserAsset">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
