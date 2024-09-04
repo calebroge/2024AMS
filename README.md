@@ -1,7 +1,7 @@
 ## Table of Contents
-1. [Introduction]()
-2. [Configuration](2024AMS/README.md#Configuration)
-3. [Project Documentation](2024AMS/README.md#ProjectDocumentation)
+1. [Introduction](https://github.com/calebroge/2024AMS?tab=readme-ov-file#introduction)
+2. [Configuration](https://github.com/calebroge/2024AMS?tab=readme-ov-file#configuration)
+3. [Project Documentation](https://github.com/calebroge/2024AMS?tab=readme-ov-file#)
 
 ## Introduction
 
