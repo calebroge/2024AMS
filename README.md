@@ -5,6 +5,7 @@ In addition, this system can generate up-to-date reports on assets and barcodes 
 
 # Project Documentation
 Attached is the documentation of the project below including the software requirements, database schema, input/output design and other documents regarding the development of the software.
+
 [Captsone Project Documentation Package.zip](https://github.com/user-attachments/files/16853307/Captsone.Project.Documentation.Package.zip)
 
 # Configuration
