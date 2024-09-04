@@ -26,13 +26,23 @@ Ensure you have the latest version installed. If not, download and install it fr
 
 ### 1. appsettings.json
 
-For the project to run on Visual Studio, make sure you change the database in the appsettings.json to the name of the computer machine you are using. 
+For the project to run on Visual Studio, make sure you change the server in the appsettings.json to the name of the computer machine you are using. For example, change `Server=CALEBSPC` to the name of your machine. The code below
+shows where to look and what to adjust.
+
+```json
+"ConnectionStrings": {
+  "2024AMSConnectionString": "Server=CALEBSPC\\SQLEXPRESS;Database=2024AMS;Integrated Security=SSPI;Trusted_Connection=True;"
+}
+```
 
 ### 2. Initialize.cs
 
-Comment out all of the code in the initialize page except the code below
+Leave the code that is commented out in the initialize page except the code below which you could change to add your email.
 
-
+```C#
+ // Hardcode the email address when bypassing the Okta login.
+ strEmailAddress = "caleb.roge@franklincollege.edu";
+```
 
 ### 3. 2024AMS.bak
 
