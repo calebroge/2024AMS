@@ -1,7 +1,7 @@
 # Table of Contents
 1. [Introduction](2024AMS/README.md)
 2. [Configuration](2024AMS/README.md)
-3. [Project Documentation](2024AMS/README.md)
+3. [Project Documentation](README.md)
 4. [Conclusion](2024AMS/README.md)
 
 # Introduction
