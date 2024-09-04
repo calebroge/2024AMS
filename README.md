@@ -1,8 +1,8 @@
 # Table of Contents
-1. [Introduction](2024AMS/README.md)
-2. [Configuration](2024AMS/README.md)
-3. [Project Documentation](README.md)
-4. [Conclusion](2024AMS/README.md)
+1. [Introduction](2024AMS/main/README.md#Introduction)
+2. [Configuration](2024AMS/README.md#Configuration)
+3. [Project Documentation](2024AMS/README.md#ProjectDocumentation)
+4. [Conclusion](2024AMS/README.md#Conclusion)
 
 # Introduction
 
@@ -18,3 +18,5 @@ In addition, you will need to download the database for this application in orde
 Attached is the documentation of the project below including the software requirements, database schema, input/output design and other documents regarding the development of the software.
 
 [Captsone Project Documentation Package.zip](https://github.com/user-attachments/files/16853307/Captsone.Project.Documentation.Package.zip)
+
+# Conclusion
