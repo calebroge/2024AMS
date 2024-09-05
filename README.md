@@ -2,7 +2,7 @@
 1. [Introduction](https://github.com/calebroge/2024AMS?tab=readme-ov-file#introduction)
 2. [Installation](https://github.com/calebroge/2024AMS?tab=readme-ov-file#installation)
 3. [Configuration](https://github.com/calebroge/2024AMS?tab=readme-ov-file#configuration)
-4. [Documentation](https://github.com/calebroge/2024AMS?tab=readme-ov-file#project-documentation)
+4. [Documentation](https://github.com/calebroge/2024AMS?tab=readme-ov-file#documentation)
 
 ## Introduction
 
