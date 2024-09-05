@@ -27,7 +27,7 @@ Ensure you have the latest version installed. If not, download and install it fr
 3. Clone the repository
 
 ```
-git clone https://github.com/calebroge/2024AMS
+git clone https://github.com/calebroge/2024AMS.git
 ```
 
 ## Configuration
